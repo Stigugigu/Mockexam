@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "54baa536-f326-40ea-9071-6cc94b00b863",
+		"name": "Bookstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/books"
+			},
+			"response": []
+		},
+		{
+			"name": "Get orders",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "12345",
+						"username": "admin"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "Add order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"isbn\": \"978-3-86490-207-9\",\n    \"name\": \"Alice\",\n    \"address\": \"Adventurestreet 12\\n1001 Wonderland\"\n}"
+				},
+				"url": "http://localhost:8080/api/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "Remove order",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "12345",
+						"username": "admin"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/orders/1"
+			},
+			"response": []
+		}
+	]
+}
