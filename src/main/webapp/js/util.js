@@ -11,7 +11,8 @@ export default {
 	interpolate(key, value, context = document) {
 		if (value instanceof Object && !Array.isArray(value)) {
 			for (let prop in value) {
-				this.interpolate(`${key}.${prop}`, value[prop], context);
+				const newKey = key ? `${key}.${prop}` : prop;
+				this.interpolate(newKey, value[prop], context);
 			}
 		} else {
 			context.querySelectorAll(`[data-field="${key}"]`).forEach(el => el.innerHTML = value ?? '');

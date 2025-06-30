@@ -1,10 +1,21 @@
 <h2>Order Book</h2>
-<form>
+
+<!-- 1️⃣  Formular bekommt eine ID, damit JS es leicht findet -->
+<form id="orderForm">
 	<label>ISBN<sub>*</sub></label>
-	<input name="isbn" required />
+	<!-- 2️⃣  ISBN-Feld bekommt ebenfalls eine ID                -->
+	<!--     und bleibt readonly, weil der Nutzer sie nicht ändern soll -->
+	<input name="isbn" id="isbn" required readonly />
+
 	<label>Name<sub>*</sub></label>
-	<input name="name" required/>
+	<input name="name" id="name" required />
+
 	<label>Address<sub>*</sub></label>
-	<textarea name="address" required></textarea>
-	<button data-action="submit" class="primary">Submit</button> <button data-action="cancel" class="secondary">Cancel</button>
+	<textarea name="address" id="address" required></textarea>
+
+	<button data-action="submit" class="primary">Submit</button>
+	<button data-action="cancel" class="secondary">Cancel</button>
 </form>
+
+<!-- 3️⃣  Platz für Erfolgs-/Fehlermeldung -->
+<div id="orderMsg" class="hidden"></div>

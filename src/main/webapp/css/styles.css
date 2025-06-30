@@ -16,6 +16,13 @@ b { font-weight: bold; }
 .info { color: #4169e1; }
 .success { color: #008b00; }
 .danger { color: #8b0000; }
+.hidden {display: none;}
+.error {color: crimson;}
+.book-detail img {
+    max-width:200px;
+    float:left;
+    margin:0 1rem 1rem 0;
+}
 
 input, textarea { box-sizing: border-box; border-radius: 0.3rem; border: 1px solid #d3d3d3; color: #696969; font: inherit; height: 2.2rem; margin: 0.3rem 0 1.2rem 0; padding: 0 0.6rem 0 0.6rem; display: block; width: 20rem; }
 input:focus, textarea:focus { box-shadow: 0 0 0.3rem #4169e1; outline: none; }

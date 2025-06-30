@@ -1,10 +1,24 @@
 const BASE_URL = '/api';
 
+
 export default {
-	getBooks: function(query) {
+	/* NEU – Bestellung anlegen  */
+	addOrder(order) {
+		return ajax('/orders', {
+			method : 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept'      : 'application/json'
+			},
+			body: JSON.stringify(order)         // Objekt → JSON
+		});
+	},
+
+	/* schon vorhanden – unverändert */
+	getBooks(query) {
 		return ajax('/books' + (query ? '?query=' + query : ''), {
-			method: 'GET',
-			headers: {'Accept': 'application/json'}
+			method : 'GET',
+			headers: { 'Accept': 'application/json' }
 		});
 	}
 };

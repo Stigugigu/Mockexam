@@ -34,5 +34,11 @@ function renderBook(view, book) {
 	li.querySelector('.buy').addEventListener('click', e => {
 		router.navigate('/order', book.isbn);
 	});
+	li.querySelector('img') //reroute klick on image
+	   .addEventListener('click', () =>
+		        router.navigate('/book', book.isbn));
+	li.querySelector('h2') //reroute klick on h2 (title of book)
+	   .addEventListener('click', () =>
+		        router.navigate('/book', book.isbn));
 	view.querySelector('ul').append(li);
 }
